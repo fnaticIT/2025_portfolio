@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Remove graphql-request package",
+			"type": "shell",
+			"command": "npm uninstall graphql-request",
+			"group": "build"
+		}
+	]
+}

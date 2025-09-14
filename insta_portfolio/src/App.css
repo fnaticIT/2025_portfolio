@@ -1,0 +1,146 @@
+/* Instagram-inspired Portfolio Styles */
+
+.insta-root {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2rem 3rem 2rem;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.insta-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.insta-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e1306c;
+  box-shadow: 0 2px 8px rgba(225,48,108,0.15);
+}
+
+.insta-profile-info {
+  flex: 1;
+  text-align: left;
+}
+.insta-profile-info h2 {
+  margin: 0 0 0.2em 0;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+.insta-username {
+  color: #888;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  display: block;
+}
+.insta-bio {
+  margin: 0.5em 0 0.2em 0;
+  font-size: 1.1em;
+}
+.insta-location {
+  color: #e1306c;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+.insta-links a {
+  margin-right: 1em;
+  color: #e1306c;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.insta-links a:hover {
+  color: #262626;
+}
+
+.insta-highlights {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.insta-highlight {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  min-width: 160px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.insta-highlight h4 {
+  margin: 0 0 0.5em 0;
+  color: #e1306c;
+  font-size: 1.1em;
+}
+.insta-highlight ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.insta-highlight li {
+  font-size: 1em;
+  margin-bottom: 0.3em;
+}
+
+.insta-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.insta-post {
+  background: #fafafa;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s;
+}
+.insta-post:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(225,48,108,0.10);
+}
+.insta-post-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.insta-post-content {
+  padding: 1rem 1.2rem 1.2rem 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.insta-post-content h5 {
+  margin: 0 0 0.3em 0;
+  font-size: 1.15em;
+  color: #262626;
+}
+.insta-post-content p {
+  margin: 0 0 0.7em 0;
+  color: #444;
+  font-size: 1em;
+}
+.insta-tags {
+  margin-top: auto;
+}
+.insta-tag {
+  display: inline-block;
+  background: #e1306c;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.2em 0.7em;
+  font-size: 0.95em;
+  margin-right: 0.5em;
+  margin-bottom: 0.2em;
+}

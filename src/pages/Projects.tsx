@@ -1,0 +1,118 @@
+import React, { useEffect, useState } from 'react';
+import './Projects.css';
+import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs } from 'react-icons/fa';
+import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo } from 'react-icons/si';
+
+import { GrDeploy, GrKubernetes } from "react-icons/gr";
+
+const techIcons: { [key: string]: JSX.Element } = {
+  "ReactJS": <FaReact />,
+  "NodeJS": <FaNodeJs />,
+  "AWS": <FaAws />,
+  "PostgreSQL": <SiPostgresql />,
+  "MongoDB": <SiMongodb />,
+  "Ruby On Rails": <SiRubyonrails />,
+  "Material UI": <SiMaterialdesign />,
+  "HTML5": <SiHtml5 />,
+  "CSS3": <SiCss3 />,
+  "jQuery": <SiJquery />,
+  "AWS-ECS": <SiAwsamplify />,
+  'Cognito': <FaAws />,
+  'Lambda': <FaAws />,
+  'ECS': <FaAws />,
+  'Jenkins': <FaJenkins />,
+  'Docker': <FaDocker />,
+  'GraphQL': <FaDatabase />,
+  'CI/CD': <FaGitlab />,
+  'GitLab': <FaGitlab />,
+  'GitHub': <FaGithub />,
+  'Heroku': <GrDeploy />,
+  'Netlify': <GrDeploy />,
+  'Firebase': <SiFirebase />,
+  'GCP': <FaGoogle />,
+  'Azure': <FaMicrosoft />,
+  'Kubernetes': <GrKubernetes />,
+  'Terraform': <SiTerraform />,
+  'ArgoCD': <SiArgo />,
+  'Java': <FaJava />,
+  'Spring Boot': <FaJava />,
+  'Python': <FaPython />,
+  'Node.js': <FaNodeJs />,
+  'Express.js': <FaNodeJs />,
+  'Hibernate': <FaJava />,
+  'Maven': <FaJava />,
+  'Gradle': <FaJava />,
+  'JUnit': <FaJava />,
+  'Mockito': <FaJava />,
+  'Jest': <FaReact />,
+  'React': <FaReact />,
+  'Angular': <FaAngular />,
+  'Vue.js': <FaVuejs />,
+  'Next.js': <FaReact />,
+  'Gatsby': <FaReact />,
+  'Nuxt.js': <FaVuejs />,
+  'Redux': <FaReact />,
+  'Vuex': <FaVuejs />,
+  'Tailwind CSS': <SiCss3 />,
+  'Bootstrap': <SiCss3 />,
+  'JQuery': <SiJquery />,
+};
+
+
+const Projects: React.FC = () => {
+  // Static projects from resume
+  const projects = [
+    {
+      title: "Federated Learning based Stress Management",
+      description: "Privacy-preserving federated learning system for human stress detection, utilizing clustering techniques and Q-learning. Built a mobile app for real-world stress detection, integrating physiological and psychological data to provide personalized recommendations.",
+      techUsed: "Flower, Machine Learning, Android, Python, Flask",
+      image: { url: "/images/federated-learning.png" },
+      link: "#" // Add research paper link if available
+    },
+    {
+      title: "Co-connect",
+      description: "Full-stack college networking portal (MERN stack) with real-time chat, user authentication, club management, and interview preparation.",
+      techUsed: "MongoDB, Express.js, React.js, Node.js",
+      image: { url: "/images/co-connect.png" },
+      link: "#" // Add live project link if available
+    },
+    {
+      title: "Student Registration Database",
+      description: "Student registration database system to manage campus re-entry during COVID-19, ensuring reliable data integrity and seamless CRUD operations.",
+      techUsed: "SQL",
+      image: { url: "/images/student-registration.png" },
+      link: "#" // Add project report link if available
+    },
+  ];
+
+  return (
+    <div className="projects-container">
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="project-card"
+            style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
+          >
+            {project.image.url && project.image.url !== '' ? (
+              <img src={project.image.url} alt={project.title} className="project-image" onError={e => (e.currentTarget.style.display = 'none')} />
+            ) : null}
+            <div className="project-details">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <div className="tech-used">
+                {project.techUsed.split(', ').map((tech, i) => (
+                  <span key={i} className="tech-badge">
+                    {techIcons[tech] ? techIcons[tech] : <FaReact />} {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
